@@ -61,13 +61,13 @@ function Cina() {
     }, [datos, textoBusqueda]);
 
     return (
-        <div className='min-h-screen bg-green-50 p-6'>
+        <div className='min-h-screen bg-[#213043] overscroll-contain overscroll-none'>
             {/* Header con título y búsqueda */}
             <div className="text-center mb-8">
-                <h1 className='text-4xl font-bold text-green-800 mb-2'>
+                <h1 className='text-4xl font-bold text-white mb-2'>
                     CINA
                 </h1>
-                <p className='text-xl text-green-700 mb-6 font-medium'> 
+                <p className='text-xl text-white mb-6 font-medium'> 
                     Composición de materias primas usadas en alimentos para animales
                 </p>
                 

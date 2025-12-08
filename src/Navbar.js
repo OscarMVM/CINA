@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Navbar() {
     return (
         <nav style={{ 
-            backgroundColor: '#f0f0f0', 
+            backgroundColor: '#213043', 
             padding: '15px',
             borderBottom: '2px solid #ccc'
         }}>
@@ -13,7 +13,7 @@ function Navbar() {
                 justifyContent: 'space-between',
                 alignItems: 'center'
             }}>
-                <h2 style={{ color: 'blue', margin: 0 }}>Mi Primera App</h2>
+                <h2 style={{ color: 'white', margin: 0 }}>Mi Primera App</h2>
                 
                 <div>
                     <Link 
@@ -21,7 +21,7 @@ function Navbar() {
                         style={{ 
                             margin: '0 10px', 
                             textDecoration: 'none',
-                            color: 'blue',
+                            color: 'white',
                             fontWeight: 'bold'
                         }}
                     >
@@ -32,7 +32,7 @@ function Navbar() {
                         style={{ 
                             margin: '0 10px', 
                             textDecoration: 'none',
-                            color: 'blue',
+                            color: 'white',
                             fontWeight: 'bold'
                         }}
                     >
