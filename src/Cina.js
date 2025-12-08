@@ -61,7 +61,7 @@ function Cina() {
     }, [datos, textoBusqueda]);
 
     return (
-        <div className='min-h-screen bg-[#213043] overscroll-contain overscroll-none'>
+        <div className='min-h-screen bg-[#213043]'>
             {/* Header con título y búsqueda */}
             <div className="text-center mb-8">
                 <h1 className='text-4xl font-bold text-white mb-2'>
