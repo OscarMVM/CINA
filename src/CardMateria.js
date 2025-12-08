@@ -98,7 +98,7 @@ function CardMateria({ materia }) {
             <div className="mt-6 pt-4 border-t border-green-100">
                 <button
                     onClick={() => setModalAbierto(true)}
-                    className="w-full bg-[#77AD94] hover:bg-green-700 text-white font-medium py-3 px-4 rounded-xl transition-colors duration-200 flex items-center justify-center gap-2"
+                    className="w-full bg-[#558257] hover:bg-green-700 text-white font-medium py-3 px-4 rounded-xl transition-colors duration-200 flex items-center justify-center gap-2"
                 >
                     Ver Datos Completos
                 </button>
