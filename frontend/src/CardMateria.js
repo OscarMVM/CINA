@@ -35,17 +35,18 @@ function CardMateria({ materia }) {
     };
 
     return (
-        <div className="bg-white rounded-3xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-green-100 p-6 h-fit">
+        
+        <div className="bg-[#434343]/10 rounded-3xl shadow-md hover:shadow-lg transition-shadow duration-300 border border-green-100 p-6 h-fit">
             {/* Información básica del materia */}
-            <h3 className="text-xl font-semibold text-green-800 mb-2 leading-tight">
+            <h3 className="text-xl font-semibold text-white mb-2 leading-tight">
                 {materia.ingrediente}
             </h3>
 
-            <p className="text-sm font-medium text-green-600 italic mb-3">
+            <p className="text-sm font-medium text-[#77AD94] italic mb-3">
                 {materia.nombre_cientifico}
             </p>
 
-            <p className="text-sm text-gray-700 leading-relaxed">
+            <p className="text-sm text-[#F1E8E1] leading-relaxed">
                 {materia.descripcion.length > 120
                     ? materia.descripcion.substring(0, 120) + '...'
                     : materia.descripcion
@@ -98,7 +99,7 @@ function CardMateria({ materia }) {
             <div className="mt-6 pt-4 border-t border-green-100">
                 <button
                     onClick={() => setModalAbierto(true)}
-                    className="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-3 px-4 rounded-xl transition-colors duration-200 flex items-center justify-center gap-2"
+                    className="w-full bg-[#20C997] hover:bg-[#10674D] text-white font-medium py-3 px-4 rounded-xl transition-colors duration-200 flex items-center justify-center gap-2"
                 >
                     Ver Datos Completos
                 </button>
@@ -118,8 +119,8 @@ function SeccionDesplegable({ titulo, datos, abierta, alternarSeccion }) {
                 onClick={alternarSeccion}
                 className={`w-full p-4 rounded-2xl border-2 transition-all duration-200 text-left font-medium text-sm flex justify-between items-center
                     ${abierta
-                        ? 'bg-green-100 border-green-300 text-green-800 shadow-sm'
-                        : 'bg-white border-green-200 text-gray-700 hover:bg-green-50 hover:border-green-300'
+                        ? 'bg-[#77AD94] border-green-300 text-white shadow-sm'
+                        : 'bg-[#353B3D] border-green-200 text-white hover:bg-green-50 hover:text-[#353B3D] hover:border-green-300'
                     }`}
             >
                 <span>{titulo}</span>
@@ -135,7 +136,7 @@ function SeccionDesplegable({ titulo, datos, abierta, alternarSeccion }) {
             </button>
 
             {abierta && (
-                <div className="mt-2 bg-green-50 border-2 border-green-200 rounded-2xl p-4 animate-in slide-in-from-top-2 duration-200">
+                <div className="mt-2 bg-[#353B3D] border-2 border-green-200 rounded-2xl p-4 animate-in slide-in-from-top-2 duration-200">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         {Object.entries(datos).map(([nombre, info]) => (
                             <div key={nombre} className="bg-white rounded-xl border border-green-200 p-4 hover:shadow-md transition-shadow duration-200">
@@ -183,9 +184,9 @@ function ModalDatos({ materia, onClose }) {
 
     return (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50" onClick={onClose}>
-            <div className="bg-white rounded-3xl max-w-6xl w-full max-h-[90vh] overflow-hidden shadow-2xl" onClick={e => e.stopPropagation()}>
+            <div className="bg-[#1D1D1D] rounded-3xl max-w-6xl w-full max-h-[90vh] overflow-hidden shadow-2xl" onClick={e => e.stopPropagation()}>
                 {/* Header del modal */}
-                <div className="bg-green-600 text-white p-6 flex justify-between items-center">
+                <div className="bg-[#20C997] text-white p-6 flex justify-between items-center">
                     <div>
                         <h2 className="text-2xl font-bold">{materia.ingrediente}</h2>
                         <p className="text-green-100 italic">{materia.nombre_cientifico}</p>
@@ -202,20 +203,20 @@ function ModalDatos({ materia, onClose }) {
                 
                 {/* Descripción */}
                 <div className="p-6 border-b border-gray-200">
-                    <p className="text-gray-700 leading-relaxed">{materia.descripcion}</p>
+                    <p className="text-[#F1E8E1] leading-relaxed">{materia.descripcion}</p>
                 </div>
                 
                 {/* Tabs */}
                 <div className="border-b border-gray-200">
-                    <div className="flex space-x-1 p-2 bg-gray-50">
+                    <div className="flex space-x-1 p-2 bg-[#2D2D2D]">
                         {tabs.map(tab => (
                             <button
                                 key={tab.id}
                                 onClick={() => setTabActiva(tab.id)}
                                 className={`px-4 py-2 rounded-lg font-medium text-sm transition-colors ${
                                     tabActiva === tab.id
-                                        ? 'bg-green-600 text-white'
-                                        : 'text-gray-600 hover:text-green-600 hover:bg-green-50'
+                                        ? 'bg-[#77AD94] text-white'
+                                        : 'text-[#77AD94] hover:text-green-600 hover:bg-green-50'
                                 }`}
                             >
                                 {tab.nombre}
@@ -239,26 +240,26 @@ function TablaCompleta({ datos }) {
         <div className="overflow-x-auto">
             <table className="w-full border-collapse">
                 <thead>
-                    <tr className="bg-green-50">
-                        <th className="text-left p-3 font-semibold text-green-800 border border-green-200">Parámetro</th>
-                        <th className="text-center p-3 font-semibold text-green-800 border border-green-200">Muestras</th>
-                        <th className="text-center p-3 font-semibold text-green-800 border border-green-200">Mínimo</th>
-                        <th className="text-center p-3 font-semibold text-green-800 border border-green-200">Promedio</th>
-                        <th className="text-center p-3 font-semibold text-green-800 border border-green-200">Máximo</th>
-                        <th className="text-center p-3 font-semibold text-green-800 border border-green-200">CV (%)</th>
+                    <tr className="bg-[#20C997]">
+                        <th className="text-left p-3 font-semibold text-white border border-white">Parámetro</th>
+                        <th className="text-center p-3 font-semibold text-white border border-white">Muestras</th>
+                        <th className="text-center p-3 font-semibold text-white border border-white">Mínimo</th>
+                        <th className="text-center p-3 font-semibold text-white border border-white">Promedio</th>
+                        <th className="text-center p-3 font-semibold text-white border border-white">Máximo</th>
+                        <th className="text-center p-3 font-semibold text-white border border-white">CV (%)</th>
                     </tr>
                 </thead>
                 <tbody>
                     {Object.entries(datos).map(([nombre, info], index) => (
-                        <tr key={nombre} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-                            <td className="p-3 font-medium text-gray-900 border border-gray-200">{nombre}</td>
-                            <td className="p-3 text-center text-gray-700 border border-gray-200">{info.muestras || 'N/A'}</td>
-                            <td className="p-3 text-center text-gray-700 border border-gray-200">{info.minimo || 'N/A'}</td>
-                            <td className="p-3 text-center font-semibold text-green-700 border border-gray-200">
+                        <tr key={nombre} className={index % 2 === 0 ? 'bg-[#707070]' : 'bg-[#535353]'}>
+                            <td className="p-3 font-medium text-white border border-gray-200">{nombre}</td>
+                            <td className="p-3 text-center text-white border border-gray-200">{info.muestras || 'N/A'}</td>
+                            <td className="p-3 text-center text-white border border-gray-200">{info.minimo || 'N/A'}</td>
+                            <td className="p-3 text-center font-semibold text-[#20C997] border border-gray-200">
                                 {info.promedio_base_seca || info.promedio || 'N/A'}
                             </td>
-                            <td className="p-3 text-center text-gray-700 border border-gray-200">{info.maximo || 'N/A'}</td>
-                            <td className="p-3 text-center text-gray-700 border border-gray-200">{info.cv || 'N/A'}</td>
+                            <td className="p-3 text-center text-white border border-gray-200">{info.maximo || 'N/A'}</td>
+                            <td className="p-3 text-center text-white border border-gray-200">{info.cv || 'N/A'}</td>
                         </tr>
                     ))}
                 </tbody>

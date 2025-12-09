@@ -61,13 +61,13 @@ function Cina() {
     }, [datos, textoBusqueda]);
 
     return (
-        <div className='min-h-screen bg-green-50 p-6'>
+        <div className='min-h-screen bg-[#101010]'>
             {/* Header con título y búsqueda */}
             <div className="text-center mb-8">
-                <h1 className='text-4xl font-bold text-green-800 mb-2'>
+                <h1 className='text-4xl font-bold text-white mb-2'>
                     CINA
                 </h1>
-                <p className='text-xl text-green-700 mb-6 font-medium'> 
+                <p className='text-xl text-white mb-6 font-medium'> 
                     Composición de materias primas usadas en alimentos para animales
                 </p>
                 
@@ -75,7 +75,7 @@ function Cina() {
                 <div className="max-w-2xl mx-auto mb-6">
                     <div className="relative">
                         <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                            <svg className="h-5 w-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg className="h-5 w-5 text-[#77AD94]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                             </svg>
                         </div>
@@ -84,7 +84,7 @@ function Cina() {
                             placeholder="Buscar ingredientes, nombres científicos o descripciones..."
                             value={textoBusqueda}
                             onChange={manejarBusqueda}
-                            className="w-full pl-12 pr-12 py-4 bg-white border-2 border-green-200 rounded-2xl text-gray-900 placeholder-gray-500 focus:outline-none focus:border-green-500 focus:ring-2 focus:ring-green-200 transition-all duration-200"
+                            className="w-full pl-12 pr-12 py-4 bg-[#4B4B4B] border-2 border-[#77AD94] rounded-2xl text-[#D3CFC3] placeholder-[#D3CFC3] focus:outline-none focus:border-[#77AD94] focus:ring-2 focus:ring-[#77AD94] focus:ring-opacity-50 shadow-[0_0_15px_rgba(119,173,148,0.3)] focus:shadow-[0_0_20px_rgba(119,173,148,0.5)] transition-all duration-200"
                         />
                         {textoBusqueda && (
                             <button
