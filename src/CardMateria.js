@@ -116,14 +116,14 @@ function SeccionDesplegable({ titulo, datos, abierta, alternarSeccion }) {
         <div className="mb-3">
             <button
                 onClick={alternarSeccion}
-                className={`w-full p-4 rounded-2xl border-2 transition-all duration-200 text-left font-medium text-sm flex justify-between items-center
+                className={`w-full p-4 rounded-2xl border-2 transition-all duration-300 text-left font-medium text-sm flex justify-between items-center
                     ${abierta
                         ? 'bg-green-100 border-green-300 text-green-800 shadow-sm'
                         : 'bg-white border-green-200 text-gray-700 hover:bg-green-50 hover:border-green-300'
                     }`}
             >
                 <span>{titulo}</span>
-                <div className={`transform transition-all duration-300 ${abierta ? 'rotate-180' : 'rotate-0'}`}>
+                <div className={`transform transition-all duration-500 ${abierta ? 'rotate-180' : 'rotate-0'}`}>
                     <svg
                         className="w-6 h-6"
                         fill="currentColor"
@@ -134,8 +134,10 @@ function SeccionDesplegable({ titulo, datos, abierta, alternarSeccion }) {
                 </div>
             </button>
 
-            {abierta && (
-                <div className="mt-2 bg-green-50 border-2 border-green-200 rounded-2xl p-4 animate-in slide-in-from-top-2 duration-200">
+            <div className={`overflow-hidden transition-all duration-400 ease-in-out ${
+                abierta ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+            }`}>
+                <div className="mt-2 bg-green-50 border-2 border-green-200 rounded-2xl p-4">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                         {Object.entries(datos).map(([nombre, info]) => (
                             <div key={nombre} className="bg-white rounded-xl border border-green-200 p-4 hover:shadow-md transition-shadow duration-200">
@@ -164,7 +166,7 @@ function SeccionDesplegable({ titulo, datos, abierta, alternarSeccion }) {
                         ))}
                     </div>
                 </div>
-            )}
+            </div>
         </div>
     );
 }
