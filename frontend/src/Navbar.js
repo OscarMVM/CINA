@@ -38,6 +38,28 @@ function Navbar() {
                     >
                         Cina
                     </Link>
+                    <Link 
+                        to="/graph" 
+                        style={{ 
+                            margin: '0 10px', 
+                            textDecoration: 'none',
+                            color: 'blue',
+                            fontWeight: 'bold'
+                        }}
+                    >
+                        Graph
+                    </Link>
+                    <Link 
+                        to="/bar" 
+                        style={{ 
+                            margin: '0 10px', 
+                            textDecoration: 'none',
+                            color: 'blue',
+                            fontWeight: 'bold'
+                        }}
+                    >
+                        Bar
+                    </Link>
                 </div>
             </div>
         </nav>

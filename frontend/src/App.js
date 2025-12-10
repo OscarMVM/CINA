@@ -4,6 +4,8 @@ import './App.css';
 import Navbar from './Navbar';
 import Inicio from './Inicio';
 import Cina from './Cina';
+import Graph from './Graph';
+import Bar from './Bar';
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Inicio />} />
           <Route path="/cina" element={<Cina />} />
+          <Route path="/graph" element={<Graph />} />
+          <Route path="/bar" element={<Bar />} />
         </Routes>
       </div>
     </Router>
